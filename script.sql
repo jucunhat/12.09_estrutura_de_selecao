@@ -3,7 +3,7 @@
 DO 
 $$
 DECLARE
-	data INT := 29102022;
+	data INT := 29022022;
 	dia INT;
 	mes INT;
 	ano INT;
@@ -17,7 +17,7 @@ BEGIN
 		RAISE NOTICE 'Data inválida';
 	ELSE
 		CASE
-			WHEN mes > 12 OR mes < 12 OR dia < 1 OR dia > 31 THEN
+			WHEN mes > 12 OR mes < 0 OR dia < 1 OR dia > 31 THEN
 				data_valida := FALSE;
 			ELSE
 				IF ((mes = 4 OR mes = 6 OR mes = 9 OR mes = 11) AND dia > 30) THEN
