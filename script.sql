@@ -1,15 +1,28 @@
-DO
-$$
+DO $$
 DECLARE
-	valor INT := fn_valor_aleatorio_entre(1, 100);
+	a INT := fn_valor_aleatorio_entre(0, 20);
+	b INT := fn_valor_aleatorio_entre(0, 20);
+	c INT := fn_valor_aleatorio_entre(0, 20);
+	delta NUMERIC(10, 2);
+	raizUm NUMERIC(10, 2);
+	raizDois NUMERIC(10, 2);
 BEGIN
-	IF valor % 2 = 0 THEN
-		RAISE NOTICE '% é par', valor;
-	ELSE
-		RAISE NOTICE '% é impar', valor;
-	END IF;
+
 END;
 $$
+
+-- DO
+-- $$
+-- DECLARE
+-- 	valor INT := fn_valor_aleatorio_entre(1, 100);
+-- BEGIN
+-- 	IF valor % 2 = 0 THEN
+-- 		RAISE NOTICE '% é par', valor;
+-- 	ELSE
+-- 		RAISE NOTICE '% é impar', valor;
+-- 	END IF;
+-- END;
+-- $$
 -- DO
 -- $$
 -- DECLARE
