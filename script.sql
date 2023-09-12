@@ -6,14 +6,12 @@ DECLARE
 BEGIN
 	RAISE NOTICE 'O valor é %', valor;
 	CASE valor
-		WHEN 1 THEN
-			RAISE NOTICE 'Ímpar';
-		WHEN 3 THEN
-			RAISE NOTICE 'Ímpar';
-		WHEN 2 THEN
+		WHEN 1, 3, 5, 7, 9 THEN
+			RAISE NOTICE 'Impar';
+		WHEN 2, 4, 6, 8 THEN
 			RAISE NOTICE 'Par';
-		WHEN 4 THEN
-			RAISE NOTICE 'Par';
+		ELSE
+			RAISE NOTICE 'Fora do intervalo de tratamento';
 	END CASE;
 END;
 $$
