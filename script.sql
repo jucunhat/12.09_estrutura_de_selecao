@@ -7,7 +7,24 @@ DECLARE
 	raizUm NUMERIC(10, 2);
 	raizDois NUMERIC(10, 2);
 BEGIN
-
+	RAISE NOTICE '%x% + %x + % = ', a, U&'\00B2', b, c;
+	IF a = 0 THEN
+		RAISE NOTICE 'Não é uma equação de segundo grau';
+	ELSE
+		--calcular delta
+		delta := b ^ 2 - 4 * a * c;
+		-- aninhado
+		IF delta< 0 THEN
+			RAISE NOTICE 'Sem raizes';
+		ELSIF delta = 0 THEN
+			raizUm := (-b + |/delta) / 2 * a;
+			RAISE NOTICE 'Tem uma raiz: %', raizUm;
+		ELSE
+			raizUm := (-b + |/delta) / 2 * a;
+			raizDois := (-b - |/delta) / 2 * a;
+			RAISE NOTICE 'Duas raizes: % e %', raizUm, raizDois;
+		END IF;
+	END IF;
 END;
 $$
 
